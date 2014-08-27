@@ -1,1 +1,1 @@
-var graph = 1;
+var graph = new joint.dia.Graph;
