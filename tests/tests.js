@@ -1,7 +1,7 @@
 QUnit.module( "Basics", {
 	setup : function() {
-		
-		this.people_mapper = new PeopleMapper();
+		var element_to_which_the_graph_will_be_added = $('#persons_graph_test');
+		this.people_mapper = new PeopleMapper(element_to_which_the_graph_will_be_added);
 
 	},
 	teardown: function(){

@@ -1,10 +1,11 @@
-function PeopleMapper () {
+function PeopleMapper (el) {
 	this.graph = new joint.dia.Graph;
+	this.el = el;
 	this.current_status = {
 		'action' : 'nothing'
 	};
 	this.paper = new joint.dia.Paper({
-	    el: $('#persons_graph'),
+	    el: el,
 	    width: 600,
 	    height: 200,
 	    model: this.graph,
