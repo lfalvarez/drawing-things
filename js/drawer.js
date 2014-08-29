@@ -1,26 +1,24 @@
-var graph;
-var paper;
-var current_status;
-$(function(){
-	graph = new joint.dia.Graph;
-	current_status = {
+function PeopleMapper () {
+	this.graph = new joint.dia.Graph;
+	this.current_status = {
 		'action' : 'nothing'
 	};
-	paper = new joint.dia.Paper({
+	this.paper = new joint.dia.Paper({
 	    el: $('#persons_graph'),
 	    width: 600,
 	    height: 200,
-	    model: graph,
+	    model: this.graph,
 	    gridSize: 1,
 
 	});
-	paper.on('blank:pointerclick', function(evt, x, y){
+	this.paper.on('blank:pointerclick', function(evt, x, y){
 		var person = new joint.shapes.basic.Circle({
 			'position' : {
 				'x':x,
 				'y':y
 			}
 		});
-		graph.addCell(person)
+		this.model.addCell(person)
 	})
-})
+	
+}
