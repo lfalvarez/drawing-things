@@ -1,17 +1,20 @@
+var Graph = joint.dia.Graph;
+Graph.prototype.current_status = {
+	'action' : 'nothing'	
+}
+Graph.prototype.get_action = function(){
+	return this.current_status.action;
+}
+Graph.prototype.set_action = function(action){
+	this.current_status.action = action;
+}
+var Paper = joint.dia.Paper;
+
 function PeopleMapper (el) {
-	var Graph = joint.dia.Graph;
-	Graph.prototype.current_status = {
-		'action' : 'nothing'	
-	}
-	Graph.prototype.get_action = function(){
-		return this.current_status.action;
-	}
-	Graph.prototype.set_action = function(action){
-		this.current_status.action = action;
-	}
+	
 	this.graph = new Graph;
 	this.el = el;
-	this.paper = new joint.dia.Paper({
+	this.paper = new Paper({
 	    el: el,
 	    width: 600,
 	    height: 200,
